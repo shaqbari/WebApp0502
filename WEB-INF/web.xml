@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+  version="3.1"
+  metadata-complete="true">
+
+  <servlet>
+	<servlet-name>member</servlet-name>
+	<servlet-class>com.servlet.MemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>member</servlet-name>
+	<url-pattern>/member/regist</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>multi</servlet-name>
+	<servlet-class>com.servlet.MultiMethodServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>multi</servlet-name>
+	<url-pattern>/sum</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+	<servlet-name>ddClass</servlet-name>
+	<servlet-class>com.servlet.DDTest</servlet-class>
+	<init-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:oracle:thin:@localhost:1521:XE</param-value>		
+	</init-param>
+	<init-param>
+		<param-name>user</param-name>
+		<param-value>scott</param-value>		
+	</init-param>
+	<init-param>
+		<param-name>password</param-name>
+		<param-value>1234</param-value>		
+	</init-param>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ddClass</servlet-name>
+	<url-pattern>/init</url-pattern>
+  </servlet-mapping>
+
+</web-app>
